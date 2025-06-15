@@ -1,0 +1,271 @@
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+  animation: tooltip-fade-in 0.2s ease-out forwards;
+}
+
+.tooltip-portal {
+  position: fixed !important;
+  z-index: 10000 !important;
+}
+
+.tooltip-content {
+  background: var(--gray-color-800);
+  color: white;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--spacing-1);
+  font-size: var(--font-size-2);
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--gray-color-700);
+}
+
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* Posicionamento para Portal */
+.tooltip-portal.tooltip-top {
+  transform: translateX(-50%) translateY(-100%);
+}
+
+.tooltip-portal.tooltip-bottom {
+  transform: translateX(-50%);
+}
+
+.tooltip-portal.tooltip-left {
+  transform: translateX(-100%) translateY(-50%);
+}
+
+.tooltip-portal.tooltip-right {
+  transform: translateY(-50%);
+}
+
+/* Setas para Portal */
+.tooltip-portal .tooltip-arrow-top {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--gray-color-800);
+}
+
+.tooltip-portal .tooltip-arrow-bottom {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid var(--gray-color-800);
+}
+
+.tooltip-portal .tooltip-arrow-left {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid var(--gray-color-800);
+}
+
+.tooltip-portal .tooltip-arrow-right {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid var(--gray-color-800);
+}
+
+/* Posicionamento para uso normal (sem portal) */
+.tooltip:not(.tooltip-portal).tooltip-top {
+  bottom: calc(100% + var(--spacing-2));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip:not(.tooltip-portal) .tooltip-arrow-top {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--gray-color-800);
+}
+
+.tooltip:not(.tooltip-portal).tooltip-bottom {
+  top: calc(100% + var(--spacing-2));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip:not(.tooltip-portal) .tooltip-arrow-bottom {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid var(--gray-color-800);
+}
+
+.tooltip:not(.tooltip-portal).tooltip-left {
+  right: calc(100% + var(--spacing-2));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip:not(.tooltip-portal) .tooltip-arrow-left {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid var(--gray-color-800);
+}
+
+.tooltip:not(.tooltip-portal).tooltip-right {
+  left: calc(100% + var(--spacing-2));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip:not(.tooltip-portal) .tooltip-arrow-right {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid var(--gray-color-800);
+}
+
+/* Animações para Portal */
+.tooltip-portal.tooltip-top {
+  animation: tooltip-fade-in-portal-top 0.2s ease-out forwards;
+}
+
+@keyframes tooltip-fade-in-portal-top {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(calc(-100% + 4px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-100%);
+  }
+}
+
+.tooltip-portal.tooltip-bottom {
+  animation: tooltip-fade-in-portal-bottom 0.2s ease-out forwards;
+}
+
+@keyframes tooltip-fade-in-portal-bottom {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.tooltip-portal.tooltip-left {
+  animation: tooltip-fade-in-portal-left 0.2s ease-out forwards;
+}
+
+@keyframes tooltip-fade-in-portal-left {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-100% + 4px)) translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-100%) translateY(-50%);
+  }
+}
+
+.tooltip-portal.tooltip-right {
+  animation: tooltip-fade-in-portal-right 0.2s ease-out forwards;
+}
+
+@keyframes tooltip-fade-in-portal-right {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Animações para uso normal (sem portal) */
+.tooltip:not(.tooltip-portal) {
+  animation: tooltip-fade-in 0.2s ease-out forwards;
+}
+
+@keyframes tooltip-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.tooltip:not(.tooltip-portal).tooltip-bottom {
+  animation: tooltip-fade-in-bottom 0.2s ease-out forwards;
+}
+
+@keyframes tooltip-fade-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.tooltip:not(.tooltip-portal).tooltip-left {
+  animation: tooltip-fade-in-left 0.2s ease-out forwards;
+}
+
+@keyframes tooltip-fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.tooltip:not(.tooltip-portal).tooltip-right {
+  animation: tooltip-fade-in-right 0.2s ease-out forwards;
+}
+
+@keyframes tooltip-fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+} 
