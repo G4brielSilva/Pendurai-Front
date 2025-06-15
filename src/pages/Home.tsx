@@ -1,11 +1,11 @@
 import type React from 'react';
 import './Home.css';
-import Sidebar from '../components/Sidebar';
+import Clients from './Clients';
 
 const Home: React.FC = () => {
   return (
     <>
-		<Sidebar/>
+      	<Clients/>
     </>
   );
 };
