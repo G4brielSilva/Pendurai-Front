@@ -1,9 +1,17 @@
 import type React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './LoginForm.css';
 
 const LoginForm: React.FC = () => {
+	const navigate = useNavigate();
+
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		navigate('/home');
+	};
+
 	return (
-		<form className='login-form'>
+		<form className='login-form' onSubmit={handleSubmit}>
 			<div className='login-inputs'>
 				<div>
 					<label htmlFor='username'>Email:</label>

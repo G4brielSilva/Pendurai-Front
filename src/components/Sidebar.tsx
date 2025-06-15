@@ -19,14 +19,14 @@ const Sidebar = () => {
           </li>
           <div className="nav-divider"></div>
           <li className="nav-item">
-            <Link to="/transactions" className="nav-link">
+            <Link to="/home/#" className="nav-link">
               <BiTransfer className="nav-icon" />
               <span>Transações</span>
             </Link>
           </li>
           <div className="nav-divider"></div>
           <li className="nav-item">
-            <Link to="/balance" className="nav-link">
+            <Link to="/home/#" className="nav-link">
               <TbReportMoney className="nav-icon" />
               <span>Balanço</span>
             </Link>
