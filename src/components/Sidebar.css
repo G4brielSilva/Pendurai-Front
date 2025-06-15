@@ -1,11 +1,10 @@
 .sidebar {
-    width: 240px;
+    min-width: 240px;
     height: 100vh;
     background-color: var(--bg-light-color);
     border-right: 1px solid var(--border-color-light);
 	padding: var(--spacing-4) 0px;
 	align-items: center;
-    position: fixed;
     left: 0;
     top: 0;
 	display: flex;
