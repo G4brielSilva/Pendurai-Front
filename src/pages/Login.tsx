@@ -1,13 +1,15 @@
 import type React from 'react';
 import LoginForm from '../components/LoginForm';
+import logoName from '../assets/logo_name.png';
+import homePage from '../assets/home-page.jpg';
 import './Login.css';
 
 const Login: React.FC = () => {
     return (
         <div className='login-page'>
             <div className='presentation'>
-                <img src='/src/assets/logo_name.png' alt='Penduraí' className='logo'/>
-                <img className='presentation-image' src='/src/assets/home-page.jpg' alt='Imagem de negociação'/>
+                <img src={logoName} alt='Penduraí' className='logo'/>
+                <img className='presentation-image' src={homePage} alt='Imagem de negociação'/>
                 <p className='presentation-text'>Imagem de Freepik.com</p>
             </div>
             <div className='login-container'>

@@ -2,12 +2,13 @@ import { FaUsers } from 'react-icons/fa';
 import { BiTransfer } from 'react-icons/bi';
 import { TbReportMoney } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
+import logoName from '../assets/logo_name.png';
 import './Sidebar.css';
 
 const Sidebar = () => {
   return (
     <aside className="sidebar">
-      <img src='/src/assets/logo_name.png' alt='Penduraí' className='logo'/>
+      <img src={logoName} alt='Penduraí' className='logo'/>
       <nav className="sidebar-nav">
         <ul className="nav-list">
           <li className="nav-item">
